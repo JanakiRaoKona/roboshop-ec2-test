@@ -1,9 +1,9 @@
 module "ec2" {
-  source = "../terraform-aws-instance"
+  source = "git::https://github.com/JanakiRaoKona/terraform-aws-instance.git?ref=main"
 
-  project     = "roboshop"
-  environment = "dev"
-  component   = "mongodb"
-  sg_ids      = ["sg-00170f605f9a07ea9"]
+  project     = var.project
+  environment = var.environment
+  component   = var.component
+  sg_ids      = var.security_group_ids
 
 }
